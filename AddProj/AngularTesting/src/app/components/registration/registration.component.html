@@ -1,0 +1,73 @@
+
+  <h3 style="margin-left: 380px;">
+    Registration
+  </h3>
+  <div class="card" style="width: 35rem;">
+    
+    <div class="card-body">
+      <form [formGroup]="formRegister" (ngSubmit)="OnSave()" class="row g-3">
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">First Name</label>
+          <input type="text" class="form-control" formControlName="firstname" required="first name is required" id="inputEmail4">
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Last Name</label>
+          <input type="text" class="form-control" formControlName="lastname" id="inputPassword4" required="last name is required">
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Father Name</label>
+          <input type="text" class="form-control"formControlName="fathername"  id="inputEmail4">
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Mother Name</label>
+          <input type="text" class="form-control" id="inputPassword4" formControlName="mothername">
+        </div>
+        <div class="col-md-12">
+          <label for="inputEmail4" class="form-label">DOB</label>
+          <input type="text" class="form-control" id="inputEmail4" formControlName="dob">
+        </div>
+        <!-- <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Pincode</label>
+          <input type="text" class="form-control" id="inputPassword4" formControlName="pincode">
+        </div> -->
+        
+      
+        <div class="col-md-4">
+          <label for="inputState" class="form-label">Gender</label>
+          <select id="inputState" class="form-select" formControlName="gender">
+            <option selected>Choose...</option>
+            <option>male</option>
+            <option>female</option>
+            <option>other</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="inputState" class="form-label">City</label>
+          <select id="inputState" class="form-select" formControlName="city">
+            <option selected value="0">select</option>
+            <option *ngFor="let us of cityList" value={{us.id}}>{{us.name}}</option>
+          </select>
+        </div>
+        
+        <div class="col-md-4">
+          <label for="inputState" class="form-label">State</label>
+          <select id="inputState" class="form-select" formControlName="state">
+            <option selected value="0">select</option>
+            <option *ngFor="let son of stateList" value={{son.id}}>{{son.stateName}}</option>
+          </select>
+        </div>
+        
+        <!-- <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck" >
+              <i>Accept terms & conditions</i>
+            </label>
+          </div>
+        </div> -->
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Sign up</button>
+        </div>
+      </form>
+    </div>
+  </div>
